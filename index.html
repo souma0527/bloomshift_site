@@ -2,207 +2,70 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>BloomShift</title>
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:black;
+color:white;
+font-family:sans-serif;
+}
+
+/* セクション */
+.section{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* 画像 */
+img{
+max-width:100%;
+max-height:100vh;
+object-fit:contain;
+}
+
+/* 動画 */
+video{
+max-width:100%;
+max-height:100vh;
+}
+
+/* PCの場合少し余白 */
+@media (min-width:900px){
+
+.section{
+padding:40px;
+}
+
+img,video{
+max-width:80%;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-<header class="hero">
-<img src="img/logo.png" class="logo">
-
+<div class="section">
+<img src="PureboG.png">
 </div>
 
-</header>
-<section class="steam">
-
-  <div class="left">
-
-
-<video class="mainVideo" controls>
-  <source src="gameplay.mp4" type="video/mp4">
+<div class="section">
+<video controls autoplay muted playsinline>
+<source src="a.mp4" type="video/mp4">
 </video>
-
-<div class="thumbs">
-  <img src="img/shot1.png" alt="shot1">
-  <img src="img/shot2.png" alt="shot2">
-  <img src="img/shot3.png" alt="shot3">
-
 </div>
-  </div>
-
-  <div class="right">
-
-
-<h2>BloomShift</h2>
-
-<p class="desc">
-  能力をシフトしながら進む<br>
-  高速2Dアクションゲーム。<br><br>
-  敵やギミックを突破しながら<br>
-  新たな能力を使いこなせ。
-</p>
-
-<h3>Features</h3>
-<ul class="features">
-  <li>能力シフトシステム</li>
-  <li>高速アクション</li>
-  <li>ボスバトル</li>
-</ul>
-
-  </div>
-
-</section>
-
-<section>
-<h2>Game System</h2>
-
-<ul>
-<li>能力シフト</li>
-<li>ステージギミック</li>
-<li>ボスバトル</li>
-</ul>
-
-</section>
-
-<section>
-<h2>Developer</h2>
-
-<p>
-Developer : nachi
-</p>
-
-<p>
-Technology :
-C++ / DirectX11 / HLSL
-</p>
-
-</section>
-<script>
-
-let index = 0;
-
-const slides = document.querySelector(".slides");
-const slide = document.querySelectorAll(".slide");
-
-function update(){
-
-const width = document.querySelector(".slider").clientWidth;
-
-slides.style.transform = `translateX(${-width * index}px)`;
-
-}
-
-document.querySelector(".next").onclick = () => {
-
-index++;
-
-if(index >= slide.length){
-index = 0;
-}
-
-update();
-
-};
-
-document.querySelector(".prev").onclick = () => {
-
-index--;
-
-if(index < 0){
-index = slide.length - 1;
-}
-
-update();
-
-};
-
-const images = [
-
-"img/shot1.png",
-"img/shot2.png",
-"img/shot3.png",
-
-
-];
-
-let current = 0;
-
-function openImage(index){
-
-current = index;
-
-const lightbox = document.getElementById("lightbox");
-const img = document.getElementById("lightbox-img");
-
-img.src = images[current];
-
-lightbox.style.display = "flex";
-
-}
-
-function closeImage(){
-
-document.getElementById("lightbox").style.display = "none";
-
-}
-
-function nextImage(){
-
-current++;
-
-if(current >= images.length){
-current = 0;
-}
-
-document.getElementById("lightbox-img").src = images[current];
-
-}
-
-function prevImage(){
-
-current--;
-
-if(current < 0){
-current = images.length - 1;
-}
-
-document.getElementById("lightbox-img").src = images[current];
-
-}
-
-document.addEventListener("keydown", function(e){
-
-if(e.key === "Escape"){
-closeImage();
-}
-
-if(e.key === "ArrowRight"){
-nextImage();
-}
-
-if(e.key === "ArrowLeft"){
-prevImage();
-}
-
-});
-
-
-</script>
-
-
-</div>
-
-<div id="lightbox">
-
-<span class="close" onclick="closeImage()">×</span>
-
-<img id="lightbox-img">
-
-<button class="prev-img" onclick="prevImage()">❮</button>
-<button class="next-img" onclick="nextImage()">❯</button>
-
-
 
 </body>
 </html>
