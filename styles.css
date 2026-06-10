@@ -1053,29 +1053,6 @@ body.intro-done .global-nav {
   font-size: 0.94rem;
 }
 
-.definition-list {
-  display: grid;
-  gap: 14px;
-  margin-top: 16px;
-}
-
-.definition-list div {
-  display: grid;
-  grid-template-columns: minmax(110px, 0.44fr) minmax(0, 1fr);
-  gap: 14px;
-  padding-top: 14px;
-  border-top: 1px solid rgba(17, 17, 15, 0.1);
-}
-
-.definition-list dt {
-  font-weight: 700;
-}
-
-.definition-list dd {
-  margin: 0;
-  color: rgba(17, 17, 15, 0.8);
-}
-
 .spec-card {
   padding: 24px;
 }
@@ -1581,11 +1558,6 @@ body.intro-done .global-nav {
   .work-card,
   .contact-card {
     padding: 18px;
-  }
-
-  .definition-list div {
-    grid-template-columns: 1fr;
-    gap: 6px;
   }
 }
 
