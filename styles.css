@@ -420,13 +420,16 @@ main {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  opacity: 0;
-  transform: translateY(28px) scale(0.99);
-  filter: blur(10px);
   transition:
     opacity 900ms cubic-bezier(0.16, 1, 0.3, 1),
     transform 900ms cubic-bezier(0.16, 1, 0.3, 1),
     filter 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.intro-playing main {
+  opacity: 0;
+  transform: translateY(28px) scale(0.99);
+  filter: blur(10px);
 }
 
 body.intro-done main {
@@ -435,14 +438,19 @@ body.intro-done main {
   filter: none;
 }
 
+body.intro-playing .global-nav {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
 body.intro-done .global-nav {
   opacity: 1;
   transform: none;
 }
 
 .global-nav {
-  opacity: 0;
-  transform: translateY(-10px);
+  opacity: 1;
+  transform: none;
   transition: opacity 700ms ease, transform 700ms ease;
 }
 
