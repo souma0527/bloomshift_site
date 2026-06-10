@@ -1,47 +1,349 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio / YOUR NAME</title>
+    <meta
+      name="description"
+      content="静かな紙質感と青みのあるアクセントで構�Eした、Eペ�Eジ完結�Eポ�Eトフォリオサイト、E
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">メインコンチE��チE��移勁E/a>
 
-<style>
+    <nav class="global-nav" aria-label="サイト�Eナビゲーション">
+      <a href="#top">TOP</a>
+      <a href="#character">CHARACTER</a>
+      <a href="#spec">SPEC</a>
+      <a href="#story">STORY</a>
+      <a href="#hobby">HOBBY</a>
+      <a href="#works">WORK</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+    <div class="ocean-veil" aria-hidden="true">
+      <div class="ocean-surface"></div>
+      <div class="ocean-light ocean-light-a"></div>
+      <div class="ocean-light ocean-light-b"></div>
+      <div class="bubble bubble-a"></div>
+      <div class="bubble bubble-b"></div>
+      <div class="bubble bubble-c"></div>
+      <div class="bubble bubble-d"></div>
+      <div class="bubble bubble-e"></div>
+    </div>
 
-body{
-background:black;
-color:white;
-font-family:sans-serif;
-}
-/* 画像 */
-img{
-max-width:100%;
-max-height:100vh;
-object-fit:contain;
-}
+    <div class="intro-scene" aria-hidden="true">
+      <div class="intro-surface"></div>
+      <div class="intro-rays"></div>
+      <div class="intro-core">
+        <p class="intro-kicker">SUBMERGE</p>
+        <h1>DEEP DIVE</h1>
+        <p>海の中に沈み込むように、深層からあなたを見せる、E/p>
+      </div>
+      <div class="intro-bubbles">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
 
-/* PCの場合少し余白 */
-@media (min-width:900px){
+    <main id="top">
+      <section class="hero panel reveal">
+        <div class="hero-copy">
+          <p class="eyebrow">Portfolio / 2026</p>
+          <h1>YOUR NAME<br />PORTFOLIO</h1>
+          <p class="catch">作ることを楽しみ、伝わるかたちに整える、E/p>
+          <p class="lead">
+            こ�Eペ�Eジは、作品・得意刁E��・歩みを�Eとつの流れで見せるため�Eポ�EトフォリオチE��プレートです、E            参�Eサイト�Eように、E��かな質感と大きめの見�Eし、章立てのある構�EでまとめてぁE��す、E          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#works">WORKSを見る</a>
+            <a class="button secondary" href="#contact">CONTACTへ</a>
+          </div>
+        </div>
 
-.section{
-padding:40px;
-}
+        <div class="hero-visual" aria-hidden="true">
+          <div class="visual-frame">
+            <div class="visual-orb orb-one"></div>
+            <div class="visual-orb orb-two"></div>
+            <div class="visual-grid"></div>
 
+            <div class="hero-stat stat-a">
+              <span class="stat-label">ROLE</span>
+              <strong>Designer / Developer</strong>
+              <small>表現と実裁E�E両面を意譁E/small>
+            </div>
 
-</style>
-</head>
+            <div class="hero-stat stat-b">
+              <span class="stat-label">FOCUS</span>
+              <strong>Web / UI / Motion</strong>
+              <small>見やすさと印象の両竁E/small>
+            </div>
 
-<body>
+            <div class="hero-center">
+              <span class="hero-center-kicker">PORTFOLIO CASE</span>
+              <h2>SELECTED<br />PROJECTS</h2>
+              <p>読みめE��く、更新しやすく、�Eと目で伝わる構�E、E/p>
+            </div>
 
-<div class="section">
-<img src="PureboG.png">
-</div>
+            <div class="hero-stat stat-c">
+              <span class="stat-label">STYLE</span>
+              <strong>Clean / Warm / Calm</strong>
+              <small>紙�E質感と淡ぁE��のト�Eン</small>
+            </div>
+          </div>
+        </div>
+      </section>
 
-</body>
+      <section id="character" class="panel section reveal">
+        <div class="section-title">
+          <p>01</p>
+          <h2>CHARACTER</h2>
+        </div>
+
+        <div class="section-grid character-grid">
+          <article class="portrait-card panel-card">
+            <span class="panel-label">PROFILE</span>
+            <div class="portrait-art" aria-hidden="true">
+              <div class="portrait-silhouette"></div>
+              <div class="portrait-halo"></div>
+              <div class="portrait-line portrait-line-a"></div>
+              <div class="portrait-line portrait-line-b"></div>
+            </div>
+            <h3>YOUR NAME</h3>
+            <p class="role">Web Developer / Designer</p>
+            <p class="copy">
+              UI の整琁E��演�Eの設計、使ぁE��E��の改喁E��ひとつずつ積み上げるタイプです、E              画面の印象だけで終わらず、更新しやすさまで含めて整えることを大刁E��してぁE��す、E            </p>
+          </article>
+
+          <div class="info-stack">
+            <article class="panel-card info-card">
+              <span class="panel-label">TOOLS</span>
+              <div class="chips">
+                <span>Figma</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>React</span>
+                <span>TypeScript</span>
+                <span>Git</span>
+                <span>VS Code</span>
+              </div>
+            </article>
+
+            <article class="panel-card info-card">
+              <span class="panel-label">LANGUAGE</span>
+              <dl class="definition-list">
+                <div>
+                  <dt>日本誁E/dt>
+                  <dd>母語。要件整琁E��対話が得意、E/dd>
+                </div>
+                <div>
+                  <dt>English</dt>
+                  <dd>ドキュメント読解と基本皁E��めE��取り、E/dd>
+                </div>
+                <div>
+                  <dt>Interested In</dt>
+                  <dd>アクセシビリチE�� / UI設訁E/ Motion</dd>
+                </div>
+              </dl>
+            </article>
+
+            <article class="panel-card info-card accent-card">
+              <span class="panel-label">ABOUT</span>
+              <p>
+                ただ見栁E��が良ぁE��けではなく、使ぁE��にとって迷ぁE��少なぁEUI を目持E��てぁE��す、E                仕様�E意図が伝わる見せ方めE��細かい動きの設計も含めて、�E体�E印象を整えるのが好きです、E              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="spec" class="panel section reveal">
+        <div class="section-title">
+          <p>02</p>
+          <h2>SPEC</h2>
+        </div>
+
+        <article class="panel-card spec-card">
+          <div class="spec-grid">
+            <div>
+              <span class="panel-label">NAME</span>
+              <h3>YOUR NAME</h3>
+            </div>
+            <div>
+              <span class="panel-label">ROLE</span>
+              <p>Web Developer / UI Designer</p>
+            </div>
+            <div>
+              <span class="panel-label">LOCATION</span>
+              <p>Japan / Remote friendly</p>
+            </div>
+            <div>
+              <span class="panel-label">HOBBY</span>
+              <p>写真、カフェ巡り、読書、散歩</p>
+            </div>
+            <div>
+              <span class="panel-label">STRENGTH</span>
+              <p>構造化、改喁E��案、丁寧な実裁E/p>
+            </div>
+            <div>
+              <span class="panel-label">INTEREST</span>
+              <p>チE��インシスチE��、アニメーション、文章設訁E/p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="story" class="panel section reveal">
+        <div class="section-title">
+          <p>03</p>
+          <h2>STORY</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item panel-card">
+            <span class="timeline-year">01</span>
+            <h3>きっかけ</h3>
+            <p>
+              画面の仕絁E��めE��イアウト�E違いに興味を持ち、見た目の裏�Eにある設計を学び始める、E            </p>
+          </article>
+          <article class="timeline-item panel-card">
+            <span class="timeline-year">02</span>
+            <h3>実裁E�E楽しさ</h3>
+            <p>
+              チE��インをコードに落とし込む中で、動きや余白のわずかな差が体験を大きく変えると知る、E            </p>
+          </article>
+          <article class="timeline-item panel-card">
+            <span class="timeline-year">03</span>
+            <h3>改喁E�E視点</h3>
+            <p>
+              要件をそのまま形にするだけでなく、誰が使っても迷ぁE��くい導線や惁E��設計を意識する、E            </p>
+          </article>
+          <article class="timeline-item panel-card">
+            <span class="timeline-year">04</span>
+            <h3>これから</h3>
+            <p>
+              表現と実用性のちめE��どぁE��バランスを探りながら、より伝わる作品づくりを続けてぁE��、E            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="hobby" class="panel section reveal">
+        <div class="section-title">
+          <p>04</p>
+          <h2>HOBBY</h2>
+        </div>
+
+        <div class="hobby-layout">
+          <article class="panel-card hobby-main">
+            <span class="panel-label">DAILY INPUT</span>
+            <div class="hobby-tags">
+              <span>Photography</span>
+              <span>Music</span>
+              <span>Movies</span>
+              <span>Travel</span>
+              <span>Books</span>
+              <span>Game UI</span>
+            </div>
+            <p>
+              作品の引き出しを増やすために、�E真、E��楽、映像、街�E看板めE��誌�Eレイアウトまで、E              日常の中で気になった表現をメモしてぁE��す、E            </p>
+          </article>
+
+          <div class="hobby-aside">
+            <article class="panel-card mini-card">
+              <span class="panel-label">SNAPSHOT</span>
+              <h3>色とリズムを集める</h3>
+              <p>街で見つけた配色めE��白の取り方を、UI のヒントとしてストック、E/p>
+            </article>
+            <article class="panel-card mini-card">
+              <span class="panel-label">FOCUS</span>
+              <h3>静かな画面</h3>
+              <p>惁E��量�Eあっても、圧が強すぎなぁE��せ方を意識、E/p>
+            </article>
+            <article class="panel-card mini-card">
+              <span class="panel-label">REFRESH</span>
+              <h3>散歩と音楽</h3>
+              <p>頭を�Eり替えながら、次のアイチE��の輪郭を探る時間、E/p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="works" class="panel section reveal">
+        <div class="section-title">
+          <p>05</p>
+          <h2>WORKS</h2>
+        </div>
+
+        <div class="works-grid">
+          <article class="work-card panel-card featured">
+            <div class="work-meta">
+              <span class="panel-label">WORK 01</span>
+              <span class="status">FEATURED</span>
+            </div>
+            <h3>Editorial Portfolio</h3>
+            <p>
+              章立てのあるポ�Eトフォリオ。長斁E�E説明も読みめE��ぁE��ぁE��、見�Eしと余白のリズムを揃えてぁE��す、E            </p>
+            <ul>
+              <li>固定ナビゲーションとアンカー導緁E/li>
+              <li>スクロール連動�E軽ぁE��ニメーション</li>
+              <li>スマ�Eトフォンでも崩れにくいグリチE��</li>
+            </ul>
+          </article>
+
+          <article class="work-card panel-card">
+            <div class="work-meta">
+              <span class="panel-label">WORK 02</span>
+              <span class="status subtle">UI SYSTEM</span>
+            </div>
+            <h3>Design System Kit</h3>
+            <p>
+              ボタン、カード、見�Eし、バチE��をまとめた UI ルール雁E��新規�Eージを作るとき�E土台にできます、E            </p>
+            <ul>
+              <li>色と余白を変数匁E/li>
+              <li>再利用しやすいカード設訁E/li>
+              <li>視認性の高いタイポグラフィ</li>
+            </ul>
+          </article>
+
+          <article class="work-card panel-card">
+            <div class="work-meta">
+              <span class="panel-label">WORK 03</span>
+              <span class="status subtle">MOTION</span>
+            </div>
+            <h3>Landing Motion Study</h3>
+            <p>
+              画面に入ってきたとき�E印象を整えるための動きの試作。過度に派手にせず、�E然なリズムを重視してぁE��す、E            </p>
+            <ul>
+              <li>フェーチE+ スライド�E控えめな登場</li>
+              <li>アクセント�Eある背景レイヤー</li>
+              <li>見�Eし�E強弱で視線を誘封E/li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="panel section reveal">
+        <div class="section-title">
+          <p>06</p>
+          <h2>CONTACT</h2>
+        </div>
+
+        <article class="panel-card contact-card">
+          <div>
+            <span class="panel-label">LET'S TALK</span>
+            <h3>制作依頼めE��業の相諁E�EこちらかめE/h3>
+            <p>
+              企画の整琁E��UI の改喁E��ランチE��ングペ�Eジの制作など、まず�E気軽にご相諁E��ださい、E            </p>
+          </div>
+          <div class="contact-links">
+            <a class="button primary" href="mailto:hello@example.com">Mail</a>
+            <a class="button secondary" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="button secondary" href="#top">TOPへ戻めE/a>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
 </html>
-
 
