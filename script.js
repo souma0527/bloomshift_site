@@ -51,6 +51,7 @@ for (const section of sections) {
 }
 
 const hobbyGallery = document.querySelector("[data-hobby-gallery]");
+let openHobbySlide = null;
 
 if (hobbyGallery) {
   const hobbyButtons = Array.from(hobbyGallery.querySelectorAll("[data-hobby-target]"));
@@ -74,7 +75,11 @@ if (hobbyGallery) {
     button.addEventListener("click", () => {
       const key = button.dataset.hobbyTarget;
       if (key) {
-        setActiveHobby(key);
+        const panel = hobbyPanels.find((item) => item.dataset.hobbyPanel === key);
+        const firstPhoto = panel?.querySelector(".hobby-photo");
+        if (firstPhoto && typeof openHobbySlide === "function") {
+          openHobbySlide(firstPhoto);
+        }
       }
     });
   }
@@ -102,6 +107,7 @@ if (lightbox) {
   const lightboxCounter = lightbox.querySelector("[data-lightbox-counter]");
   const lightboxTitle = lightbox.querySelector("[data-lightbox-title]");
   const lightboxCaption = lightbox.querySelector("[data-lightbox-caption]");
+  const lightboxSummary = lightbox.querySelector("[data-lightbox-summary]");
   const lightboxPrev = lightbox.querySelector("[data-lightbox-prev]");
   const lightboxNext = lightbox.querySelector("[data-lightbox-next]");
   const lightboxCloseButtons = Array.from(lightbox.querySelectorAll("[data-lightbox-close]"));
@@ -128,17 +134,23 @@ if (lightbox) {
     if (lightboxCaption) {
       lightboxCaption.textContent = slide.caption || "";
     }
+
+    if (lightboxSummary) {
+      lightboxSummary.textContent = slide.summary || "";
+    }
   };
 
-  const openLightbox = (panel, figure) => {
-    const figures = Array.from(panel.querySelectorAll(".hobby-photo"));
+  const openLightbox = (figure) => {
+    const figures = Array.from(hobbyGallery.querySelectorAll(".hobby-panel .hobby-photo"));
     activeSlides = figures.map((item) => {
       const img = item.querySelector("img");
+      const panel = item.closest(".hobby-panel");
       return {
         src: img?.getAttribute("src") || "",
         alt: img?.getAttribute("alt") || "",
         caption: item.querySelector("figcaption")?.textContent?.trim() || "",
-        title: panel.querySelector(".hobby-panel-copy h3")?.textContent?.trim() || "",
+        summary: panel?.querySelector(".hobby-panel-copy p")?.textContent?.trim() || "",
+        title: panel?.querySelector(".hobby-panel-copy h3")?.textContent?.trim() || "",
       };
     });
 
@@ -150,6 +162,8 @@ if (lightbox) {
     document.body.classList.add("lightbox-open");
     lightboxCloseButtons[0]?.focus();
   };
+
+  openHobbySlide = openLightbox;
 
   const closeLightbox = () => {
     lightbox.hidden = true;
@@ -173,7 +187,7 @@ if (lightbox) {
     const panel = figure.closest(".hobby-panel");
     if (!panel || panel.hidden) return;
 
-    openLightbox(panel, figure);
+    openLightbox(figure);
   });
 
   hobbyGallery.addEventListener("keydown", (event) => {
@@ -186,7 +200,7 @@ if (lightbox) {
     if (!panel || panel.hidden) return;
 
     event.preventDefault();
-    openLightbox(panel, figure);
+    openLightbox(figure);
   });
 
   for (const button of lightboxCloseButtons) {

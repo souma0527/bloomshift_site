@@ -1339,6 +1339,11 @@ body.intro-done .global-nav {
   line-height: 1.7;
 }
 
+.lightbox-summary {
+  color: rgba(17, 17, 15, 0.72);
+  font-size: 0.96rem;
+}
+
 .lightbox-close,
 .lightbox-nav {
   display: inline-grid;
