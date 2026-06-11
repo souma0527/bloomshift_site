@@ -1090,34 +1090,342 @@ body.intro-done .global-nav {
   color: rgba(17, 17, 15, 0.82);
 }
 
-.hobby-layout {
+.hobby-gallery {
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: 22px;
+  padding: 24px;
+}
+
+.hobby-gallery-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
   gap: 20px;
 }
 
-.hobby-main,
-.mini-card,
+.hobby-gallery-head h3 {
+  margin: 8px 0 0;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", Georgia, serif;
+  font-size: clamp(2.2rem, 4vw, 4.2rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.hobby-gallery-head p {
+  margin: 0;
+  max-width: 42ch;
+  color: rgba(17, 17, 15, 0.78);
+}
+
+.hobby-thumb-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.hobby-thumb {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+}
+
+.hobby-thumb img {
+  width: 100%;
+  aspect-ratio: 1.1 / 0.82;
+  object-fit: cover;
+  border: 1px solid rgba(17, 17, 15, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 14px 30px rgba(17, 17, 15, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.hobby-thumb span {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.hobby-thumb small {
+  color: rgba(17, 17, 15, 0.66);
+  line-height: 1.55;
+}
+
+.hobby-thumb:hover img,
+.hobby-thumb:focus-visible img,
+.hobby-thumb.is-active img {
+  transform: translateY(-3px);
+  border-color: rgba(53, 105, 119, 0.28);
+  box-shadow: 0 18px 36px rgba(17, 17, 15, 0.12);
+}
+
+.hobby-thumb:focus-visible {
+  outline: none;
+}
+
+.hobby-panels {
+  display: grid;
+}
+
+.hobby-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.hobby-panel[hidden] {
+  display: none;
+}
+
+.hobby-panel-copy {
+  display: grid;
+  gap: 10px;
+  max-width: 70ch;
+}
+
+.hobby-panel-copy h3 {
+  margin: 0;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", Georgia, serif;
+  font-size: clamp(1.7rem, 2.5vw, 2.4rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.hobby-panel-copy p {
+  margin: 0;
+  color: rgba(17, 17, 15, 0.84);
+}
+
+.hobby-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.hobby-photo {
+  grid-column: span 4;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(17, 17, 15, 0.1);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 14px 30px rgba(17, 17, 15, 0.08);
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.hobby-photo.featured {
+  grid-column: span 6;
+}
+
+.hobby-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.45 / 1;
+  object-fit: cover;
+}
+
+.hobby-photo.featured img {
+  aspect-ratio: 1.6 / 1;
+}
+
+.hobby-photo:hover,
+.hobby-photo:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(53, 105, 119, 0.28);
+  box-shadow: 0 18px 36px rgba(17, 17, 15, 0.12);
+}
+
+.hobby-photo:focus-visible {
+  outline: 2px solid rgba(53, 105, 119, 0.32);
+  outline-offset: 2px;
+}
+
+.hobby-photo figcaption {
+  padding: 12px 14px 14px;
+  font-size: 0.94rem;
+  color: rgba(17, 17, 15, 0.74);
+}
+
 .work-card,
 .contact-card {
   padding: 24px;
 }
 
-.hobby-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 18px 0 8px;
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 18px;
 }
 
-.hobby-aside {
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.64);
+  backdrop-filter: blur(12px);
+}
+
+.lightbox-shell {
+  position: relative;
+  z-index: 1;
+  width: min(1100px, calc(100vw - 36px));
   display: grid;
+  grid-template-columns: auto minmax(0, 1fr auto);
+  align-items: center;
+  gap: 14px;
+}
+
+.lightbox-figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 26px;
+  background: rgba(245, 240, 232, 0.98);
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.32);
+  transform-origin: center;
+  animation: lightbox-pop 0.26s ease;
+}
+
+.lightbox-figure img {
+  display: block;
+  width: 100%;
+  max-height: min(76vh, 860px);
+  object-fit: contain;
+  background: #0f0f0f;
+}
+
+.lightbox-figure figcaption {
+  display: grid;
+  gap: 8px;
+  padding: 14px 18px 18px;
+  background: rgba(245, 240, 232, 0.98);
+}
+
+.lightbox-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  color: rgba(17, 17, 15, 0.66);
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+}
+
+.lightbox-meta strong {
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.lightbox-figure p {
+  margin: 0;
+  color: rgba(17, 17, 15, 0.82);
+  line-height: 1.7;
+}
+
+.lightbox-close,
+.lightbox-nav {
+  display: inline-grid;
+  place-items: center;
+  border: 0;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  font-size: 1.4rem;
+}
+
+.lightbox-nav {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  font-size: 2.1rem;
+}
+
+.lightbox-nav:hover,
+.lightbox-close:hover,
+.lightbox-nav:focus-visible,
+.lightbox-close:focus-visible {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
+
+@keyframes lightbox-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.works-year-list {
+  display: grid;
+  gap: 22px;
+}
+
+.year-block {
+  padding: 24px;
+}
+
+.year-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
   gap: 18px;
 }
 
-.mini-card h3 {
-  font-size: 1.18rem;
-  margin-top: 10px;
+.year-header h3 {
+  margin: 8px 0 0;
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", Georgia, serif;
+  font-weight: 500;
+  line-height: 1.1;
+  font-size: 1.7rem;
+}
+
+.year-header p {
+  margin: 0;
+  max-width: 44ch;
+  color: rgba(17, 17, 15, 0.78);
+}
+
+.year-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
 }
 
 .works-grid {
@@ -1481,11 +1789,29 @@ body.intro-done .global-nav {
   }
 
   .character-grid,
-  .hobby-layout,
   .works-grid,
   .timeline,
   .spec-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hobby-gallery-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hobby-thumb-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hobby-photo.featured,
+  .hobby-photo {
+    grid-column: span 12;
+  }
+
+  .year-header {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .contact-card {
@@ -1545,6 +1871,55 @@ body.intro-done .global-nav {
     padding-top: 54px;
   }
 
+  .hobby-gallery {
+    padding: 18px;
+  }
+
+  .hobby-gallery-head h3 {
+    font-size: clamp(1.7rem, 8vw, 3rem);
+  }
+
+  .hobby-thumb-row {
+    grid-template-columns: 1fr;
+  }
+
+  .hobby-photo-grid {
+    gap: 12px;
+  }
+
+  .lightbox {
+    padding: 10px;
+  }
+
+  .lightbox-shell {
+    width: min(100vw - 20px, 1000px);
+    grid-template-columns: 1fr;
+  }
+
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    font-size: 1.8rem;
+  }
+
+  .lightbox-prev {
+    left: -2px;
+  }
+
+  .lightbox-next {
+    right: -2px;
+  }
+
+  .lightbox-close {
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+  }
+
   .section-title {
     gap: 12px;
   }
@@ -1585,6 +1960,10 @@ body.intro-done .global-nav {
   .intro-surface,
   .intro-rays,
   .intro-bubbles span {
+    animation: none !important;
+  }
+
+  .lightbox-figure {
     animation: none !important;
   }
 
